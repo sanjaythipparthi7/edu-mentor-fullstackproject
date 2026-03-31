@@ -1,0 +1,156 @@
+/* ── Hero ─────────────────────────────────────────────────────────────────── */
+.hero-section {
+  min-height: 92vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 80px 80px 60px;
+  background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 60%, #312e81 100%);
+  position: relative;
+  overflow: hidden;
+  gap: 40px;
+}
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: -120px; right: -120px;
+  width: 500px; height: 500px;
+  border-radius: 50%;
+  background: rgba(99,102,241,.15);
+}
+.hero-section::after {
+  content: '';
+  position: absolute;
+  bottom: -80px; left: -80px;
+  width: 350px; height: 350px;
+  border-radius: 50%;
+  background: rgba(26,86,219,.12);
+}
+
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(99,102,241,.2); border: 1px solid rgba(99,102,241,.4);
+  color: #a5b4fc; padding: 6px 16px; border-radius: 99px;
+  font-size: 13px; font-weight: 600; margin-bottom: 24px;
+}
+
+.hero-content { max-width: 580px; position: relative; z-index: 2; }
+
+.hero-title {
+  font-size: clamp(36px, 5vw, 62px);
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: -2px;
+  color: #fff;
+  margin-bottom: 24px;
+}
+.hero-title span {
+  background: linear-gradient(135deg, #60a5fa, #a78bfa);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.hero-subtext {
+  font-size: 18px; color: rgba(255,255,255,.75);
+  line-height: 1.7; margin-bottom: 36px; max-width: 480px;
+}
+.hero-buttons { display: flex; gap: 16px; flex-wrap: wrap; }
+.btn-primary {
+  padding: 14px 32px; background: linear-gradient(135deg,#1a56db,#6366f1);
+  color: #fff; border-radius: 10px; font-weight: 700; font-size: 16px;
+  border: none; cursor: pointer; transition: all .2s;
+  box-shadow: 0 4px 20px rgba(26,86,219,.5); text-decoration: none;
+  display: inline-block;
+}
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(26,86,219,.6); color: #fff; }
+.btn-secondary {
+  padding: 14px 32px; background: rgba(255,255,255,.1);
+  color: #fff; border-radius: 10px; font-weight: 700; font-size: 16px;
+  border: 1.5px solid rgba(255,255,255,.3); cursor: pointer; transition: all .2s;
+  text-decoration: none; display: inline-block;
+}
+.btn-secondary:hover { background: rgba(255,255,255,.2); color: #fff; }
+
+.hero-image { position: relative; z-index: 2; flex-shrink: 0; }
+.hero-image img { width: min(420px, 42vw); border-radius: 24px;
+  box-shadow: 0 24px 80px rgba(0,0,0,.5); }
+
+/* ── Stats Strip ──────────────────────────────────────────────────────────── */
+.stats-strip {
+  background: #1e293b; padding: 40px 80px;
+  display: flex; justify-content: space-around; flex-wrap: wrap; gap: 20px;
+}
+.stat-item { text-align: center; }
+.stat-item .stat-big { font-size: 42px; font-weight: 900; color: #60a5fa; }
+.stat-item .stat-lbl { font-size: 14px; color: #94a3b8; margin-top: 4px; }
+
+/* ── Features ─────────────────────────────────────────────────────────────── */
+.features-section { padding: 100px 80px; background: #f1f5f9; }
+.section-title {
+  text-align: center; font-size: 40px; font-weight: 900;
+  color: #0f172a; margin-bottom: 12px; letter-spacing: -1px;
+}
+.section-subtitle { text-align: center; color: #64748b; font-size: 17px; margin-bottom: 56px; }
+
+.features-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; }
+
+.feature-card {
+  background: #fff; border-radius: 20px; padding: 36px 28px;
+  box-shadow: 0 4px 20px rgba(0,0,0,.06); text-align: center;
+  transition: all .3s; border: 1.5px solid #e2e8f0;
+}
+.feature-card:hover { transform: translateY(-8px); box-shadow: 0 16px 40px rgba(0,0,0,.12); border-color: #1a56db; }
+.feature-card .icon { font-size: 48px; margin-bottom: 20px; }
+.feature-card h3 { font-size: 20px; font-weight: 700; color: #0f172a; margin-bottom: 10px; }
+.feature-card p { font-size: 14px; color: #64748b; line-height: 1.6; }
+
+/* ── Roles ────────────────────────────────────────────────────────────────── */
+.roles-section { padding: 100px 80px; background: #fff; }
+.roles-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 28px; margin-top: 56px; }
+.role-card {
+  border-radius: 20px; overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0,0,0,.09);
+  transition: transform .3s;
+}
+.role-card:hover { transform: translateY(-6px); }
+.role-card-header { padding: 32px 28px; }
+.role-card-body { padding: 28px; background: #fff; }
+.role-card-body ul { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+.role-card-body li { display: flex; align-items: center; gap: 10px; font-size: 14px; color: #475569; }
+.role-card-body li::before { content: "✓"; color: #10b981; font-weight: 700; }
+
+/* ── Testimonials ─────────────────────────────────────────────────────────── */
+.testimonials-section { padding: 100px 80px; background: linear-gradient(135deg, #eff6ff, #eef2ff); }
+.testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-top: 56px; }
+.test-card {
+  background: #fff; border-radius: 20px; padding: 32px 28px;
+  box-shadow: 0 4px 20px rgba(0,0,0,.07); position: relative;
+}
+.test-card::before { content: '"'; font-size: 80px; color: #dbeafe;
+  position: absolute; top: 12px; left: 24px; line-height: 1; font-family: Georgia, serif; }
+.test-text { font-size: 15px; color: #475569; line-height: 1.7; margin-bottom: 20px; position: relative; z-index: 1; }
+.test-author { display: flex; align-items: center; gap: 12px; }
+.test-avatar { width: 44px; height: 44px; border-radius: 50%;
+  background: linear-gradient(135deg,#1a56db,#6366f1);
+  color: #fff; display: flex; align-items: center; justify-content: center;
+  font-weight: 800; font-size: 16px; }
+.test-info .name { font-weight: 700; font-size: 14px; }
+.test-info .role { font-size: 12px; color: #94a3b8; }
+
+/* ── CTA Section ─────────────────────────────────────────────────────────── */
+.cta-section {
+  background: linear-gradient(135deg, #1a56db, #6366f1);
+  padding: 80px; text-align: center; color: #fff;
+}
+.cta-section h2 { font-size: 40px; font-weight: 900; margin-bottom: 14px; }
+.cta-section p { font-size: 18px; opacity: .85; margin-bottom: 36px; }
+
+/* ── Responsive ──────────────────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .hero-section { flex-direction: column; padding: 60px 32px; text-align: center; }
+  .hero-buttons { justify-content: center; }
+  .hero-image img { width: min(320px, 90vw); }
+  .features-section, .roles-section, .testimonials-section { padding: 60px 24px; }
+  .stats-strip { padding: 40px 24px; }
+  .cta-section { padding: 60px 24px; }
+}
